@@ -1,0 +1,105 @@
+<div class="menu" contenteditable="false">
+	<div class="group">
+		 <div data-action="format" data-format="bold" class="item"><i class="fa fa-bold"></i></div>
+		 <div data-action="format" data-format="italic" class="item"><i  class="fa fa-italic"></i></div>
+		 <div data-action="underline" class="item"><i class="fa fa-underline"></i></div>
+		 <div id="selectFont" data-action="selectFont" class="item">
+			  <i class="fa fa-font"></i>
+		 </div>
+	</div>
+	<div class="group">
+		 <div id="makeLink" data-action="makeLink" class="item"><i class="fa fa-link"></i></div>
+		 <div data-action="makeOrderedList" class="item"><i class="fa fa-list"></i></div>
+		 <div id="insertImage" data-action="insertImage" class="item gallery-browse"
+		 	data-iu-gallery=".editor-gallery" >
+			  <i class="fa fa-picture-o"></i>
+		 </div>
+		 <div data-action="increaseQuoteLevel" class="item"><i class="fa fa-quote-right"></i></div>
+	</div>
+
+	<div class="group">
+		 <div data-action="format" data-format="h2" class="item"><i class="fa fa-header"></i></div>
+		 <div data-action="alignLeft" class="item"><i class="fa fa-align-left"></i></div>
+		 <div data-action="alignCenter" class="item"><i class="fa fa-align-center"></i></div>
+		 <div data-action="alignRight" class="item"><i class="fa fa-align-right"></i></div>
+	</div>
+	
+	<div class="group">
+		 <div data-action="undo" class="item"><i class="fa fa-undo"></i></div>
+		 <div data-action="redo" class="item"><i class="fa fa-undo flip"></i></div>
+	</div>
+
+	<div class="group">
+		<div id="changeCode" data-action="changeCode" class="item">
+			<i class="fa fa-code"></i>
+		</div>
+	</div>
+</div>
+<div class="templates hidden">
+	<div id="drop-font">
+		 <strong>Change Font</strong>
+		 <i class="fa fa-chevron-up quit"></i><br>
+		 Text Size: 
+		 <select id="textSelector">
+			  <option data-size="12">Small</option>
+			  <option data-size="24">Medium</option>
+			  <option data-size="30">Large</option>
+		 </select><br>
+		 Font: 
+		 <select id="fontSelect">
+			  <option data-fonts="georgia">Georgia</option>
+			  <option data-fonts="arial">Arial</option>
+			  <option data-fonts="helvetica, arial">Helvetica</option>
+			  <option data-fonts="menlo, consolas, courier new, monospace">Monospace</option>
+			  <option data-fonts="\"Times New Roman\", times">Times New Roman</option>
+			  <option data-fonts="tahoma, sans-serif">Tahoma</option>
+			  <option data-fonts="\"Trebuchet MS\"">Trebuchet MS</option>
+			  <option data-fonts="verdana">Verdana</option>
+		 </select><br>
+
+		 <div class="btn submitFont">Apply</div>
+	</div>
+	<div id="drop-link">
+		 <strong>Insert Link</strong>
+		 <i class="fa fa-chevron-up quit"></i>
+		 <input placeholder="Link URL" type="text" id="url" />
+		 <div class="btn submitLink">Insert</div>
+	</div>
+	<div id="drop-image">
+		 <strong>Insert Image</strong>
+		 <i class="fa fa-chevron-up quit"></i>
+		 <div class="iu-gallery closed editor-gallery"
+			data-iu-callback="addImage" data-iu-load="lib/gallery/browser">
+			<div class="contents" style="max-height:400px;overflow-y:auto;">
+			</div>
+			<hr>
+			<div class="form-horizontal">
+				<div class="form-group">
+					<label class="col-sm-4 col-lg-2">
+						Upload
+					</label>
+					<div class="col-sm-8 col-lg-10">
+						<input type="file" class="form-control gallery-upload-file" name="image" accept=".png,.jpg,.jpeg">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-8 col-lg-10">
+						<progress max="100" value="0" class="iu-progress"></progress>
+						<span class="iu-message"></span>
+					</div>
+					<button class="btn bs col-sm-4 col-lg-2 gallery-upload" type="submit">
+						Upload
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="drop-code">
+		<div style="width: 600px; max-width: 98vw;">
+			<strong>Modify Source</strong>
+			<i class="fa fa-chevron-up quit"></i>
+			<textarea class="squire-code"></textarea>
+			<div class="btn submitCode">Update</div>
+		</div>
+  </div>
+</div>
